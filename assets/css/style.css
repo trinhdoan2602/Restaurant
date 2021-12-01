@@ -1,0 +1,931 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Taviraj:ital,wght@0,600;0,700;1,600&display=swap');
+:root {
+    --main-color: #192945;
+    --sub-color: #c09440;
+    --text-color: #ffffff;
+    --bg-color: #0c1023;
+}
+*{
+    margin: 0;
+    padding: 0;
+    outline:  none;
+    box-sizing: border-box;
+}
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 5rem;
+}
+.btnne {
+    background-color: transparent;
+    padding: 15px 30px;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.5s ease;
+    font-weight: 700;
+    animation: btnAnimation;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+    background-color: var(--text-color);
+    color: var(--sub-color);
+    border: 2px solid var(--sub-color);
+    
+}
+@keyframes btnAnimation {
+    0% {opacity: 0.4;}
+    50% {opacity: 1;}
+    100% {opacity: 0.4;}
+}
+.btnne:hover {
+    border: 2px solid var(--bg-color);
+    color: var(--main-color);
+    background-color: var(--sub-color);
+}
+ul {
+    list-style: none;
+}
+a {
+    text-decoration: none !important;
+}
+.section-padding {
+    padding: 80px 0;
+}
+.justify-content {
+    justify-content: space-between;
+}
+.container {
+    max-width: 1200px;
+    margin: auto;
+}
+.row {
+    display: flex;
+    flex-wrap: wrap;
+}
+.top {
+    background-color: #192945b9;
+    position: fixed;
+    width: 100vw;
+    z-index: 99;
+}
+.top::before {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: var(--main-color);
+    z-index: -1;
+    transform: translateY(-100%);
+    transition: all 0.5s ease;
+}
+.top.active::before {
+    transform: translateY(0);
+}
+.top .logo img {
+    width: 150px;
+}
+.top .menu-items {
+    width: 100%;
+    left: 0;
+    top: 0;
+    margin-top: 10px;
+    padding: 20px 20px;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+}
+
+.top .menu-items li {
+    display: inline;
+    margin: 10px 10px;
+}
+.top .menu-items a{
+    color: var(--text-color);
+    font-size: 13px;
+    font-family: 'Roboto', sans-serif;
+    transition: all 0.3s ease;
+}
+.top .menu-items a:hover{
+    color: var(--sub-color);
+}
+/* user */
+.top .user-item {
+    position: absolute;
+    top: 0;
+
+}
+.top .nav-item > a {
+    margin-top: -4px;
+} 
+.top .user-action img {
+    height: 40px;
+    border-radius: 50%;
+}
+.top .nav-item i {
+	font-size: 18px;
+}
+.top .dropdown-item i {
+	font-size: 16px;
+	min-width: 22px;
+}
+.top .nav-item.open > a {
+	background: none !important;
+}
+.top .dropdown-menu {
+	border-radius: 1px;
+	border-color: #e5e5e5;
+    background-color: var(--main-color);
+	box-shadow: 0 2px 8px rgba(0,0,0,.05);
+}
+.top .dropdown-menu a {
+    color: var(--text-color);
+	padding: 8px 20px;
+	line-height: normal;
+}
+.top .dropdown-menu a:hover,.top .dropdown-menu a:active {
+	color: #333;
+}
+.top .dropdown-item .material-icons {   
+	font-size: 21px;
+	line-height: 16px;
+	vertical-align: middle;
+	margin-top: -2px;
+}
+
+/* bg-image */
+
+.bg-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+}
+.bg-image::before {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    /* background-image: url("./Images/home-bg1.jpg"); */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    z-index: -2;
+    animation: InOut 15s infinite;
+}
+@keyframes InOut {
+    0%{transform: scale(1); background-image: url("../../Images/home-bg1.jpg"); transition: 5s;}
+    50%{transform: scale(1.1); background-image: url("../../Images/home-bg2.jpg"); transition: 5s;}
+    100% {transform: scale(1); background-image: url("../../Images/home-bg1.jpg"); transition: 5s;}
+}
+.bg-image::after {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    opacity: 0.3;
+    z-index: -2;    
+}
+.bg-image .bg-image-content {
+    text-align: center;
+    max-width: 600px;
+}
+.bg-image .bg-image-content h2{
+    font-size: 60px;
+    color: var(--text-color);
+    font-family: 'Dancing Script';
+}
+.bg-image .bg-image-content p{
+    font-size: 12px;
+    color: var(--text-color);
+    font-family: 'Taviraj', serif;
+    letter-spacing: 3px;
+}
+
+/* about */
+.about {
+    background-color: var(--main-color);
+}
+.section-title {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 30px;
+}
+.section-title h2{
+    font-size: 18px;
+    color: var(--sub-color);
+    text-transform: uppercase;
+    letter-spacing: 5px;
+}
+.section-title h2::before{
+    content: attr(data-title);
+    display: block;
+    color: var(--text-color);
+    font-family: 'Dancing Script';
+    font-size: 40px;
+}
+.about .about-item h2{
+    font-size: 30px;
+    color: var(--sub-color);
+}
+.about .about-item p {
+    letter-spacing: 1px;
+    line-height: 27px;  
+    font-size: 15px;
+    margin: 15px 0 30px;
+    color: var(--text-color);
+}
+.about .about-item img {
+    width: 100%;
+    border-radius: 10px;
+}
+.about .about-item {
+    width: calc(100%/2);
+    padding: 15px;
+}
+.about .about-item-img {
+    position: relative;
+}
+.about .about-item span {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    color: var(--main-color);
+    font-family: 'Dancing Script';
+    font-weight: 900;
+    font-size: 30px;
+    transform: translate(-50%, -50%);
+}
+.about .about-item-img::before {
+    content: "";
+    display: block;
+    width: 100px;
+    height: 100px;
+    border: 3px solid var(--sub-color);
+    position: absolute;
+    top: calc(50% - 50px);
+    left: calc(50% - 50px);
+    /* top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); */
+    animation: xoayVong 5s infinite;
+}
+@keyframes xoayVong {
+    0% {transform: rotate(0deg);}
+    100% {transform: rotate(360deg);}
+}
+
+/* menu */
+
+.menu {
+    background-color: var(--bg-color);
+}
+.menu-title {
+    width: 100%;
+    text-align: center;
+}
+.menu-title .menu-button {
+    background-color: transparent;
+    margin: 10px 12px;
+    border: none;
+    font-size: 25px;
+    color: var(--text-color);
+    cursor: pointer;
+}
+.menu-title .menu-button.active {
+    color: var(--sub-color);
+}
+.menu-title .menu-button:hover {
+    color: var(--sub-color);
+}
+.menu-title .cart-icon {
+    float: right;
+    margin: 10px 12px;
+    font-size: 20px;
+    color: var(--text-color);
+    transition: all 0.5s ease;
+}
+.menu-title .cart-icon:hover {
+    color: var(--sub-color);
+}
+.menu-title .cart-icon:hover span {
+    color: var(--text-color);
+}
+.menu-title .cart-icon:hover sup {
+    color: var(--text-color);
+}
+.menu-title .cart-icon i {
+    cursor: pointer;
+    font-size: 40px;
+}
+.menu-title .cart-icon span {
+    color: var(--sub-color);
+    font-style: italic;
+    font-size: 14px;
+    transition: all 0.5s ease;
+}
+.menu-title .cart-icon sup {
+    color: var(--sub-color);
+    font-style: italic;
+    font-size: 14px;
+    transition: all 0.5s ease;
+}
+/* menu trong */
+.menu-title1 {
+    width: 100%;
+    text-align: left;
+}
+.menu-title1 .menu-button1 {
+    background-color: transparent;
+    margin: 10px 12px;
+    border: none;
+    font-size: 22px;
+    color: var(--text-color);
+    cursor: pointer;
+}
+.menu-title1 .menu-button1.active {
+    color: var(--sub-color);
+}
+.menu-title1 .menu-button1:hover {
+    color: var(--sub-color);
+}
+.menu-title .cart-icon {
+    float: right;
+    margin: 10px 12px;
+    font-size: 20px;
+    color: var(--text-color);
+    transition: all 0.5s ease;
+}
+.menu-title1 .cart-icon:hover {
+    color: var(--sub-color);
+}
+.menu-title1 .cart-icon:hover span {
+    color: var(--text-color);
+}
+.menu-title1 .cart-icon:hover sup {
+    color: var(--text-color);
+}
+.menu-title1 .cart-icon i {
+    cursor: pointer;
+    font-size: 40px;
+}
+.menu-title1 .cart-icon span {
+    color: var(--sub-color);
+    font-style: italic;
+    font-size: 14px;
+    transition: all 0.5s ease;
+}
+.menu-title1 .cart-icon sup {
+    color: var(--sub-color);
+    font-style: italic;
+    font-size: 14px;
+    transition: all 0.5s ease;
+}
+.food-items {
+    width: 50%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 15px;
+    position: relative;
+}
+.food-items::before {
+    content: "";
+    display: block;
+    position: absolute;
+    left: 15px;
+    right: 15px;
+    bottom: 0;
+    border: 1px dashed #ffffff42;
+}
+.food-items:hover .food-item h6 {
+    color: var(--sub-color);
+}
+.food-items:hover .food-item p {
+    color: var(--text-color);
+}
+.food-items:hover .food-item img.mon2 {
+    margin-left: 0px;
+    opacity: 1;
+    visibility: visible;
+}
+.food-items:hover .food-prince button {
+    border: 2px solid var(--text-color);
+    color: var(--text-color);
+}
+.food-item {
+    display: flex;
+    align-items: center;
+}
+.food-item img {
+    width: 150px;
+    height: 110px;
+    margin-right: 25px;
+}
+.food-item img.mon2 {
+    position: absolute;
+    z-index: 2;
+    width: 150px;
+    height: 110px;
+    opacity: 0;
+    visibility: hidden;
+    margin-right: 25px;
+    transition: 0.5s ease;
+}
+
+.food-item .food-item-text {
+    font-family: 'Dancing Script', cursive;
+
+}
+.food-item h6 {
+    color: var(--text-color);
+    transition: all 0.1s ease-in;
+    font-size: 28px;
+}
+.food-item p {
+    color: var(--sub-color);
+    transition: all 0.2s ease-in;
+    font-size: 25px;
+    position: absolute;
+    right: 0;
+}
+.food-item p span {
+    font-style: italic;
+    font-weight: 400;
+    font-size: 16px;
+}
+/* .food-prince p {
+    color: var(--sub-color);
+    transition: all 0.3s ease-in;
+    font-size: 20px;
+}
+.food-prince button {
+    border: 2px solid var(--sub-color);
+    border-radius: 5px;
+    background-color: var(--main-color);
+    color: var(--sub-color);
+    transition: all 0.3s ease-in;
+    font-size: 15px;
+    height: 35px;
+    padding: 0 12px;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    z-index: 0;
+}
+.food-prince button::before {
+    content: '';
+    position: absolute;
+    top:0; right: 0;
+    width:0;
+    height:100%;
+    background:var(--sub-color);
+    transition: .3s linear;
+    z-index: -1;
+}
+.food-prince button:hover::before {
+    width:100%;
+    left: 0;
+}
+.food-prince button:hover {
+    color: var(--bg-color) !important;
+}
+.food-prince button i {
+    font-size: 25px;
+    padding-left: 10px;
+    margin-top: -5px;
+} */
+.menu-item-content {
+    display: none;
+}
+.menu-item-content.active {
+    display: flex;
+    flex-wrap: wrap;
+}
+.menu-item-content1 {
+    display: none;
+}
+.menu-item-content1.active {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+
+/* Cart */
+
+.cart {
+    width: 100%;
+    margin: auto;
+    text-align: center;
+    padding: 30px 0;
+}
+.cart i.icon {
+    position: absolute;
+    cursor: pointer;
+    top: 15px;
+    left: 15px;
+    font-weight: 900;
+    font-size: 50px;
+    color: var(--bg-color);
+}
+.cart h2 {
+    margin-top: 50px;
+    margin-bottom: 30px;
+}
+.cart form {
+    width: 100%;
+}
+.cart table {
+    width: 100%;
+}
+.cart table thead tr th:first-child{
+    text-align: left;
+}
+.cart table tr td {
+    border-bottom: 1px solid #ddd;
+    padding: 12px 0;
+}
+.cart img {
+    width: 100px;
+    margin-right: 10px;
+}
+.cart td.sanpham {
+    display: flex;
+    align-items: center;
+}
+.cart td input.soluong {
+    width: 30px;
+    outline: none;
+}
+.cart .xoa {
+    cursor: pointer;
+}
+.cart table thead tr th:last-child{
+    text-align: right;
+}
+.cart table tbody tr td:last-child {
+    text-align: right;
+}
+.cart .price-total {
+    text-align: right;
+}
+.cart .tongtien {
+    font-weight: bold;
+}
+.cart button {
+    border: 2px solid var(--bg-color);
+    border-radius: 5px;
+    background-color: var(--main-color);
+    color: var(--sub-color);
+    transition: all 0.3s ease-in;
+    font-size: 15px;
+    margin-top: 20px;
+    height: 35px;
+    padding: 0 52px;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    z-index: 0;
+}
+.cart button::before {
+    content: '';
+    position: absolute;
+    top:0; right: 0;
+    width:0;
+    height:100%;
+    background:var(--sub-color);
+    transition: .3s linear;
+    z-index: -1;
+}
+.cart button:hover::before {
+    width:100%;
+    left: 0;
+}
+.cart button:hover {
+    color: var(--bg-color) !important;
+}
+/* ---------- */
+.cart {
+    position: fixed;
+    height: 100vh;
+    width: 375px;
+    right: 0;
+    top: 0;
+    background-color: var(--sub-color);
+    padding: 12px 20px;
+    overflow: scroll;
+    z-index: 1000;
+    right: -100%;
+    transition: all 0.3s ease;
+}
+/* Đặt bàn */
+
+.dat-ban {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    z-index: -2;
+    color: whitesmoke;
+    /* animation: InOutDatBan 15s infinite; */
+    background-image: url("../../Images/bgrrestaurant2.jpg") ;
+    /* filter: brightness(50%); */
+}
+.dat-ban label {
+    font-size: 16px;
+    font-weight: 700;
+}
+.dat-ban input {
+    background-color: transparent;
+}
+.dat-ban input::placeholder {
+    color: #fff;
+}
+.dat-ban input {
+    color: #fff;
+}
+.dat-ban select {
+    background-color: transparent;
+}
+.dat-ban select {
+    color: #fff;
+}
+@keyframes InOutDatBan {
+    0%{transform: scale(1); background-image: url("../../Images/backgrounddatban.jpg"); transition: 5s;}
+    50%{transform: scale(1.1); background-image: url("../../Images/home-bg2.jpg"); transition: 5s;}
+    100% {transform: scale(1); background-image: url("../../Images/home-bg1.jpg"); transition: 5s;}
+}
+
+/* Phản hồi */
+
+.phan-hoi {
+    background-color: var(--main-color);
+}
+.phan-hoi-items {
+    display: flex;
+    flex-wrap: wrap;
+}
+.phan-hoi-item {
+    width: calc(100%/3 - 30px);
+    margin: 0 15px;
+    border: 2px solid var(--bg-color);
+    padding: 15px;
+    border-radius: 10px;
+    transition: all 0.5s ease;
+    /* box-shadow: 0, 0, 0, 15px rgba(0, 0, 0, 0.3); */
+}
+.phan-hoi-item:hover {
+    box-shadow: -15px -15px 15px rgba(0, 0, 0, 0.2),
+                15px 15px 15px rgba(0, 0, 0, 0.1);
+}
+.phan-hoi-item:hover img{
+    border-color: var(--sub-color);
+}
+.phan-hoi-item span {
+    color: var(--text-color);
+}
+.phan-hoi-item h2 {
+    color: var(--text-color);
+    font-size: 20px;
+
+}
+.phan-hoi-item p {
+    color: var(--text-color);
+    font-size: 17px;
+    margin: 20px 0;
+}
+.phan-hoi-item img {
+    width: 150px;
+    height: 200px;
+    border-radius: 50%; 
+    border: 3px solid var(--bg-color);
+}
+.phan-hoi-item-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+.phan-hoi-item-star i {
+    color: var(--sub-color);
+}
+
+/* Team */
+
+.team {
+    background-color: var(--bg-color);
+}
+.team-items {
+    padding: 60px;
+    width: calc(100%/3);
+    position: relative;
+}
+.team-items img {
+    width: 100%;
+    border-radius: 10px;
+    transition: all 0.5s ease;
+}
+.team-items:hover .team-items-text{
+    background-color: var(--sub-color);
+    transform: translateY(-50px);
+}
+.team-items:hover img {
+    transform: skewX(2deg);
+}
+.team-items-text {
+    position: absolute;
+    padding: 17px 0;
+    right: 45px;
+    left: 45px;
+    bottom: 0;
+    margin-bottom: 13px;
+    background-color: var(--main-color);
+    text-align: center;
+    border-radius: 10px;
+    transform: translateY(50%);
+    transition: all 0.5s ease;
+}
+.team-items-text h2 {
+    color: var(--text-color);
+}
+.team-items-text span {
+    color: var(--text-color);
+}
+
+/* footer */
+
+.footer {
+    padding-top: 80px;
+    position: relative;
+}
+.footer .section-title {
+    margin-bottom: 150px;
+}
+.footer .section-title h2::before {
+    font-size: 35px;
+    letter-spacing: 4px;
+}
+.footer h2 {
+    font-size: 12px;
+    letter-spacing: 2px;
+}
+.footer p.hh {
+    font-size: 16px;
+    color: var(--text-color);
+    margin-top: 50px;
+    font-style: italic;
+}
+.footer-bg {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-image: url("../../Images/frbgr.jpg");
+    z-index: -2;
+}
+.footer::before {
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    top: 0;
+    opacity: 0.4;
+    z-index: -1;
+}
+
+.footer form label {
+    font-size: 16px;
+    font-weight: 700;
+}
+.footer form input {
+    background-color: transparent;
+}
+.footer form input::placeholder {
+    color: #fff;
+}
+.footer form input {
+    color: #fff;
+}
+.footer form select {
+    background-color: transparent;
+}
+
+.footer form select {
+    color: #fff;
+}
+.footer-item {
+    text-align: center;
+    width: calc(100%/3);
+}
+.footer-item i {
+    color: #ffffff;
+    font-size: 25px;
+    margin-right: 12px;
+    cursor: pointer;
+    transition: var(--sub-color);
+}
+.footer-item i:hover {
+    color: var(--sub-color);
+}
+.footer h3 {
+    color: var(--text-color);
+    font-size: 40px;
+    font-family: 'Dancing Script';
+}
+.footer p {
+    color: var(--text-color);
+    margin: 12px 0;
+    letter-spacing: 1px;
+    font-size: 14px;
+}
+.footer p a{
+    color: var(--text-color);
+    transition: all 0.3s ease;
+}
+.footer p a:hover{
+    color: var(--sub-color);
+}
+.footer-copyright {
+    text-align: center;
+    padding: 15px 0 12px;
+    color: var(--text-color);
+    margin-top: 20px;
+    border-top: 1px solid  #ffffff44;
+    font-size: 12px;
+}
+.footer-copyright a {
+    color: var(--sub-color);
+}
+
+
+/* Nut on top */
+
+.nutontop {
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    bottom: 18px;
+    right: 18px;
+    z-index: 99;
+    font-size: 25px;
+    border: none;
+    outline: none;
+    background-color: var(--sub-color);
+    cursor: pointer;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+    transform: translateY(200%);
+    animation: btnAnimation;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+    background-color: var(--text-color);
+    border: 2px solid var(--sub-color);
+}
+.nutontop a{
+    color: var(--sub-color);
+}
+.nutontop.active {
+    transform: translateY(0);
+}
+.nutontop:hover a{
+    color: var(--main-color);
+}
+.nutontop:hover {
+    border: 2px solid var(--bg-color);
+    background-color: var(--sub-color);
+}
+
+/* -----Load----- */
+
+.loader-container {
+    position: fixed;
+    top:0; left:0;
+    z-index: 10000;
+    background:#fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height:100%;
+    width:100%;
+}
+
+.loader-container.fade-out {
+    top:-120%;
+}

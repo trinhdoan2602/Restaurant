@@ -1,0 +1,415 @@
+@media (max-width: 1224px) and (min-width:1025px) {
+    .top .menu-items a{
+        font-size: 10px;
+    }
+}
+
+
+@media (max-width: 1024px) {
+    /* .top .logo {
+        margin: 0 50px;
+    }
+    .top .menu-bar {
+        margin: 0 100px;
+    }
+    .top .menu-items {
+        width: 500px;
+    }
+    .top .menu-bar.active {
+        right: 110px;
+    }
+    .about .about-item {
+        width: 100%;
+        padding:0 120px 0 90px;
+    }
+    .food-items {
+        width: 100%;
+        margin: 0 100px;
+    }
+    .phan-hoi-item {
+        width: 100%;
+        margin: 0 100px 20px 60px;
+    }
+    .team-items {
+        margin-left: -12px;
+    }
+    .team-items:hover .team-items-text{
+        background-color: var(--sub-color);
+        transform: translateY(-10px);
+    }
+    .footer {
+        padding: 80px 100px 5px 55px;
+    } */
+    
+    .top .menu-bar {
+        cursor: pointer;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: all 0.3s ease;
+    }
+    .top .menu-bar.active {
+        position: fixed;
+        top: 40px;
+        right: -200px;
+        transform: translateX(-200px);
+        z-index: 1;
+    }
+    .top .menu-bar span {
+        position: relative;
+        display: block;
+        height: 2px;
+        width: 40px;
+        background-color: var(--sub-color);
+    }
+    .top .menu-bar.active span {
+        background-color: transparent;
+    }
+    .top .menu-bar.active span::before {
+        transform: rotate(135deg);
+    }
+    .top .menu-bar.active span::after {
+        transform: rotate(-135deg);
+    }
+    .top .menu-bar span::before {
+        position: absolute;
+        display: block;
+        content: "";
+        height: 100%;
+        width: 100%;
+        transform: translateY(-10px);
+        background-color: var(--sub-color);
+        transition: all 0.3s ease;
+    }
+    .top .menu-bar span::after {
+        position: absolute;
+        display: block;
+        content: "";
+        height: 100%;
+        width: 100%;
+        transform: translateY(10px);
+        background-color: var(--sub-color);
+        transition: all 0.3s ease;
+    }
+    .top .menu-items {
+        position: fixed;
+        width: 440px;
+        height: 100vh;
+        background-color: #192945b9;
+        right: 0;
+        top: 0;
+        padding: 100px 50px;
+        margin-top: -20px;
+        transform: translateX(270%);
+        transition: all 0.3s ease;
+        line-height: 50px;
+        text-transform: uppercase;
+    }
+    .top .menu-items.active {
+        transform: translateX(130%);
+    }
+    .top .menu-items li {
+        display: block;
+    }
+    .top .menu-items a{
+        color: var(--text-color);
+        line-height: 70px;
+        font-size: 18px;
+        font-family: 'Roboto', sans-serif;
+        transition: all 0.3s ease;
+    }
+    .top .nav-item > a {
+        margin-top: 10px;
+        margin-left: -30px;
+    } 
+}
+@media (max-width: 901px) {
+    .top .logo {
+        margin: 0 15px;
+    }
+    .top .menu-bar {
+        margin: 0 30px;
+    }
+    .top .menu-items {
+        width: 400px;
+    }
+    .top .menu-bar.active {
+        position: fixed;
+        top: 40px;
+        right: -200px;
+        transform: translateX(-200px);
+        z-index: 1;
+    }
+    .top .menu-items {
+        position: fixed;
+        width: 440px;
+        height: 100vh;
+        background-color: #192945b9;
+        right: 0;
+        top: 0;
+        padding: 100px 50px;
+        margin-top: -20px;
+        transform: translateX(270%);
+        transition: all 0.3s ease;
+        line-height: 50px;
+        text-transform: uppercase;
+    }
+    .top .menu-items.active {
+        transform: translateX(100%);
+    }
+    .about-item {
+        width: 100%;
+    }
+    .food-items {
+        width: 100%;
+    }
+    .phan-hoi-item {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+    .team-items:hover .team-items-text{
+        background-color: var(--sub-color);
+        transform: translateY(-10px);
+    }
+    .nutontop {
+        bottom: 30px;
+        right: 30px;
+    }
+
+
+}
+@media (max-width: 768px) {
+    .top .logo {
+        padding: 0 15px;
+    }
+    .top .menu-bar {
+        padding: 0 15px;
+    }
+    .top .menu-items {
+        width: 400px;
+    }
+    .top .menu-bar {
+        position: fixed;
+        top: 0;
+        right: 0;
+        margin-right: -210px;
+        margin-top: 40px;
+    }
+    .top .menu-bar.active {
+        position: fixed;
+        top: 0;
+        right: 0;
+        transform: translateX(-20px);
+        z-index: 1;
+    }
+    .top .menu-items {
+        position: fixed;
+        width: 800px;
+        height: 100vh;
+        background-color: #192945b9;
+        right: 0;
+        top: 0;
+        padding: 100px 50px;
+        margin-top: -20px;
+        transform: translateX(270%);
+        transition: all 0.3s ease;
+        line-height: 50px;
+        text-transform: uppercase;
+    }
+    .top .menu-items.active {
+        transform: translateX(0%);
+    }
+    .food-items {
+        width: 100%;
+    }
+    .phan-hoi-item {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+    .team-items {
+        width: 100%;
+        margin-bottom: 30px;
+    }
+    .team-items-text {
+        margin-bottom: 23px;
+    }
+    .footer-item {
+        width: 100%;
+        margin-bottom: 30px;
+    }
+    .nutontop {
+        bottom: 50px;
+        right: 50px;
+    }
+
+}
+@media (max-width: 482px) {
+    .top .menu-bar {
+        position: fixed;
+        top: 0;
+        right: 0;
+        margin-right: -150px;
+        margin-top: 40px;
+    }
+    .top .menu-bar.active {
+        position: fixed;
+        top: 0;
+        right: 0;
+        transform: translateX(0px);
+        z-index: 1;
+    }
+    .top .menu-items {
+        position: fixed;
+        width: 800px;
+        height: 100vh;
+        background-color: #192945b9;
+        right: 0;
+        top: 0;
+        padding: 100px 50px;
+        margin-top: -20px;
+        transform: translateX(270%);
+        transition: all 0.3s ease;
+        line-height: 50px;
+        text-transform: uppercase;
+    }
+    .top .menu-items.active {
+        transform: translateX(03%);
+    }
+}
+@media (max-width: 414px) {
+    .top .logo {
+        padding: 0 15px;
+    }
+    .top .menu-bar {
+        padding: 0 15px;
+    }
+    .top .menu-bar {
+        position: fixed;
+        top: 0;
+        right: 0;
+        margin-right: -100px;
+        margin-top: 40px;
+    }
+    .top .menu-bar.active {
+        position: fixed;
+        top: 0;
+        right: 0;
+        transform: translateX(0px);
+        z-index: 1;
+    }
+    .top .menu-items {
+        position: fixed;
+        width: 800px;
+        height: 100vh;
+        background-color: #192945b9;
+        right: 0;
+        top: 0;
+        padding: 100px 50px;
+        margin-top: -20px;
+        transform: translateX(270%);
+        transition: all 0.3s ease;
+        line-height: 50px;
+        text-transform: uppercase;
+    }
+    .top .menu-items.active {
+        transform: translateX(03%);
+    }
+    .top .menu-items {
+        width: 400px;
+    }
+    .food-items {
+        width: 100%;
+    }
+    .phan-hoi-item {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+    .team-items {
+        width: 100%;
+        margin-bottom: 30px;
+    }
+    .team-items-text {
+        margin-bottom: 23px;
+    }
+    .footer-item {
+        width: 100%;
+        margin-bottom: 30px;
+    }
+    .nutontop {
+        bottom: 20px;
+        right: 20px;
+    }
+
+}
+@media (max-width: 375px) {
+    .top .logo {
+        margin: 0 -5px;
+    }
+    .top .menu-bar {
+        margin: 0 -5px;
+    }
+    .top .menu-items {
+        width: 375px;
+    }
+    .top .menu-bar.active {
+        right: 80px;
+    }
+    .top .menu-bar {
+        position: fixed;
+        top: 0;
+        right: 0;
+        margin-right: -90px;
+        margin-top: 40px;
+    }
+    .top .menu-bar.active {
+        position: fixed;
+        top: 0;
+        right: 0;
+        transform: translateX(0px);
+        z-index: 1;
+    }
+    .top .menu-items {
+        position: fixed;
+        width: 800px;
+        height: 100vh;
+        background-color: #192945b9;
+        right: 0;
+        top: 0;
+        padding: 100px 50px;
+        margin-top: -20px;
+        transform: translateX(270%);
+        transition: all 0.3s ease;
+        line-height: 50px;
+        text-transform: uppercase;
+    }
+    .about .about-item {
+        width: 100%;
+    }
+    .food-items {
+        width: 100%;
+    }
+    .phan-hoi-item {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+    .team-items {
+        width: 100%;
+        margin-bottom: 30px;
+    }
+    .team-items-text {
+        margin-bottom: 23px;
+    }
+    .footer-item {
+        width: 100%;
+        margin-bottom: 30px;
+    }
+    .nutontop {
+        bottom: 16px;
+        right: 16px;
+    }
+}
+@media (max-width: 540px) {
+    .about .about-item {
+        width: 100%;
+    }
+}
